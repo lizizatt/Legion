@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="na7JLV" name="Legion" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.NewProject" includeBinaryInAppConfig="1"
+              jucerVersion="4.3.0">
+  <MAINGROUP id="KsYZ36" name="Legion">
+    <GROUP id="{E9237708-37E8-67CC-5E8E-D5E2C0A032AA}" name="Source">
+      <FILE id="DoNjxj" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="y9X1zz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="NewProject"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="NewProject"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2015>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
