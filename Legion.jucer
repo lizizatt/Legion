@@ -4,6 +4,13 @@
               bundleIdentifier="com.yourcompany.NewProject" includeBinaryInAppConfig="1"
               jucerVersion="4.3.0">
   <MAINGROUP id="KsYZ36" name="Legion">
+    <GROUP id="{65E91AD3-ECB9-4411-39D5-9BEBE28070F9}" name="inc">
+      <FILE id="VlD178" name="NuiApi.h" compile="0" resource="0" file="SDK/MicrosoftSDKs/Kinect/v1.8/inc/NuiApi.h"/>
+      <FILE id="qyuLgx" name="NuiImageCamera.h" compile="0" resource="0"
+            file="SDK/MicrosoftSDKs/Kinect/v1.8/inc/NuiImageCamera.h"/>
+      <FILE id="gZ8fQC" name="NuiSensor.h" compile="0" resource="0" file="SDK/MicrosoftSDKs/Kinect/v1.8/inc/NuiSensor.h"/>
+      <FILE id="sN6yMR" name="NuiSkeleton.h" compile="0" resource="0" file="SDK/MicrosoftSDKs/Kinect/v1.8/inc/NuiSkeleton.h"/>
+    </GROUP>
     <GROUP id="{E9237708-37E8-67CC-5E8E-D5E2C0A032AA}" name="Source">
       <FILE id="DoNjxj" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
@@ -11,12 +18,16 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <VS2015 targetFolder="Builds/VisualStudio2015">
+    <VS2015 targetFolder="Builds/VisualStudio2015" extraCompilerFlags=""
+            extraLinkerFlags="../../SDK\MicrosoftSDKs\Kinect\v1.8\lib\x86/Kinect10.lib"
+            externalLibraries="" extraDefs="">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="1" optimisation="1" targetName="NewProject"/>
+                       isDebug="1" optimisation="1" targetName="NewProject" libraryPath="../../SDK/MicrosoftSDKs/Kinect/v1.8/lib/x86/"
+                       headerPath="../..\SDK\MicrosoftSDKs\Kinect\v1.8\inc" warningsAreErrors="0"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
-                       isDebug="0" optimisation="3" targetName="NewProject"/>
+                       isDebug="0" optimisation="3" targetName="NewProject" headerPath=".\SDK\MicrosoftSDKs\Kinect\v1.8\Assemblies"
+                       libraryPath=""/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="C:/Users/Liz/Desktop/Heptapod Translator/JUCE/modules"/>
@@ -51,4 +62,7 @@
     <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
   </MODULES>
   <JUCEOPTIONS/>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
 </JUCERPROJECT>

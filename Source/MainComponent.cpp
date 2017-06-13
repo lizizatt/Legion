@@ -9,7 +9,11 @@
 #ifndef MAINCOMPONENT_H_INCLUDED
 #define MAINCOMPONENT_H_INCLUDED
 
+#include "NuiApi.h"
 #include "../JuceLibraryCode/JuceHeader.h"
+#include <iostream>
+
+using namespace std;
 
 //==============================================================================
 /*
@@ -19,6 +23,9 @@
 class MainContentComponent   : public OpenGLAppComponent
 {
 public:
+	INuiSensor *sensor;
+	HANDLE streamHandle = NULL;
+
     //==============================================================================
     MainContentComponent()
     {
@@ -30,17 +37,45 @@ public:
         shutdownOpenGL();
     }
 
-    void initialise() override
-    {
-    }
+	void initialise() override
+	{
+		HRESULT res;
+
+		if (res = NuiInitialize(NUI_INITIALIZE_FLAG_USES_DEPTH | NUI_INITIALIZE_FLAG_USES_COLOR)) {
+			jassert(res == S_OK);
+		}
+
+		int numCams;
+		if (res = NuiGetSensorCount(&numCams)) {
+			jassert(res == S_OK);
+		}
+
+		if(res = NuiCreateSensorByIndex(numCams - 1, &sensor)) {
+			jassert(res == S_OK);
+		}
+
+		
+		if (res = NuiImageStreamOpen(NUI_IMAGE_TYPE_COLOR, NUI_IMAGE_RESOLUTION_1280x960, 0 , NUI_IMAGE_STREAM_FRAME_LIMIT_MAXIMUM, NULL, &streamHandle)) {
+			jassert(res == S_OK);
+		}
+
+
+	}
 
     void shutdown() override
     {
+		NuiShutdown();
     }
 
     void render() override
     {
         OpenGLHelpers::clear (Colours::black);
+
+		HRESULT res;
+		const NUI_IMAGE_FRAME **imgFrame;
+		if (res = NuiImageStreamGetNextFrame(&streamHandle, 200, imgFrame)) {
+			jassert(res == S_OK);
+		}
 
     }
 
